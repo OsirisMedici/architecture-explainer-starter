@@ -1,0 +1,26 @@
+type Point=[number,number];
+type Camera={az:number;k:number;S:number;ox:number;oy:number};
+type Sample={u:number;v:number;nu:number;nv:number};
+type Projection=(x:number,y:number,z:number)=>Point;
+type Facing=(s:Sample)=>boolean;
+type Solid={g:SVGGElement;sil:SVGPathElement;cr:SVGPathElement};
+type Spring={x:number;t:number;v:number};
+declare const HL:{
+  Cam:(az:number,k:number,scale:number)=>Camera;
+  proj:(camera:Camera)=>Projection;
+  fit:(camera:Camera,points:[number,number,number][],x:number,y:number)=>void;
+  facing:(camera:Camera)=>Facing;
+  rings:(x0:number,y0:number,x1:number,y1:number,r:number,inset:number)=>[Sample[],Sample[]];
+  prism:(p:Projection,f:Facing,ring:Sample[],inner:Sample[],z0:number,z1:number)=>{sil:string;crease:string};
+  solid:(parent:SVGElement)=>Solid;
+  put:(solid:Solid,paths:{sil:string;crease:string})=>void;
+  mk:<T extends keyof SVGElementTagNameMap>(tag:T,attrs:Record<string,string|number>,parent:SVGElement)=>SVGElementTagNameMap[T];
+  open:(points:Point[])=>string;
+  seg:(a:Point,b:Point)=>string;
+  spring:(x:number,opts?:{k?:number;c?:number;m?:number;eps?:number})=>Spring;
+  stepS:(s:Spring,dt:number)=>boolean;
+  register:(stage:HTMLElement,tick:(dt:number,now:number)=>boolean)=>{wake:()=>void;unregister:()=>void};
+  setReducedMotion:(on:boolean)=>void;
+  reducedMotion:()=>boolean;
+};
+export default HL;

@@ -1,0 +1,48 @@
+{
+  "name": "Courtyard House",
+  "firm": "Architecture Explainer",
+  "context": "Demonstration project",
+  "headline": "Let the building explain itself.",
+  "status": "illustrative",
+  "model": {"width": 18, "depth": 12, "floorHeight": 3.2, "storeys": 2, "courtyardWidth": 5, "courtyardDepth": 4},
+  "images": [],
+  "scenes": [
+    {
+      "kind": "ventilation", "title": "Natural ventilation", "question": "Why open the roof?",
+      "intro": "Follow the air through the central atrium.",
+      "states": [
+        {"label": "Roof shut", "caption": "Warm air collects high up. The closed roof interrupts the path for stack ventilation.", "note": "Outside 24°C · Inside 30°C · no wind"},
+        {"label": "Vent open", "caption": "Warm air leaves above. Cooler outdoor air enters below.", "note": "Outside 24°C · Inside 30°C · no wind"},
+        {"label": "Hot outdoors", "caption": "The temperature difference reverses. Hot outdoor air can enter above as cooler indoor air leaves below.", "note": "Outside 34°C · Inside 24°C · reverse stack effect"}
+      ],
+      "sources": ["https://www.ncbi.nlm.nih.gov/books/NBK143285/", "https://bsesc.energy.gov/energy-basics/natural-ventilation-and-cooling"]
+    },
+    {
+      "kind": "shade", "title": "Sun protection", "question": "What does the overhang do?",
+      "intro": "Compare the path of high and low sunlight at one window.",
+      "states": [
+        {"label": "No overhang", "caption": "Without an overhang, this high-angle ray reaches the window.", "note": "Illustrative high sun · schematic ray"},
+        {"label": "High sun", "caption": "An overhang intercepts this high-angle ray before it reaches the window.", "note": "Same illustrative sun angle · overhang added"},
+        {"label": "Low sun", "caption": "A lower-angle ray passes beneath the same overhang. Orientation and local sun paths determine when this happens.", "note": "Illustrative low sun · not a site-specific solar study"}
+      ],
+      "sources": ["https://basc.pnnl.gov/resource-guides/shading-and-solar-control-windows-and-skylights"]
+    },
+    {
+      "kind": "layers", "title": "Building layers", "question": "How do the floors fit together?",
+      "intro": "Separate the building to understand its levels and central opening.",
+      "states": [
+        {"label": "Together", "caption": "The floor plates sit around a shared central opening.", "note": "Assembled building"},
+        {"label": "Lift roof", "caption": "Lift the roof to see the rooms and the opening beneath it.", "note": "Exploded view · movement is for explanation"},
+        {"label": "Separate floors", "caption": "Separating the levels makes their relationship visible. Dashed lines keep corresponding corners aligned.", "note": "Exploded view · not a construction sequence"}
+      ], "sources": []
+    },
+    {
+      "kind": "options", "title": "Compare options", "question": "Where should we leave space open?",
+      "intro": "Compare a continuous floor plate with a central opening.",
+      "states": [
+        {"label": "Continuous floor", "caption": "This option keeps the centre within the floor plate.", "note": "Option A · continuous plate"},
+        {"label": "Central opening", "caption": "This option leaves the centre open. It trades usable floor area for a vertical connection that needs project-specific assessment.", "note": "Option B · central opening"}
+      ], "sources": []
+    }
+  ]
+}

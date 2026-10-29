@@ -1,0 +1,20 @@
+{
+  "name": "architecture-explainer-starter",
+  "version": "1.0.0",
+  "private": true,
+  "description": "An agent-ready architecture presentation starter using Hairline.",
+  "type": "module",
+  "packageManager": "bun@1.4.4",
+  "scripts": {
+    "dev": "bun scripts/dev.ts",
+    "build": "bun scripts/build.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "bun test",
+    "check": "bun run typecheck && bun test && bun run build",
+    "create-project": "bun scripts/create-project.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "1.4.4",
+    "typescript": "7.0.2"
+  }
+}
